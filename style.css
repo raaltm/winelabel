@@ -16,22 +16,68 @@ h4 {
     text-align: center;
     margin-top: 10px;
 }
-header {
+header, footer {
+    min-width:100%;
     text-align: center;
+    background-color: white;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
 }
-form.label{
+footer {
+    bottom: 0;
+    clear: both;
+}
+.left-sidebar {
+    z-index: 0;
+    overflow:scroll;
     position: absolute;
     left: 10%;
-}
-img.demo{
-    position: absolute;
-    right: 10%;
-}
-.content {
+    width: 20%;
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
 }
+.right-sidebar{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    overflow:scroll;
+    height: 100%;
+    z-index: 0;
+    background-color: #FFFFF0;
+}
+.content {
+    height: 80vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    overflow:scroll;
+}
+#canvas {
+    margin-bottom: 15px;
+}
+.middle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
 .form-item {
-    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.label-selector {
+    background-color: #FFFFF0;
+    width: 80px;
+    height: 80px;
 }
