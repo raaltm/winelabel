@@ -22,7 +22,7 @@ function addTextToImage(logoPath, textObjs, width, logoData = null) {
             let logoRatio = logo.naturalHeight / logo.naturalWidth,
                 logoWidth = width/1.8,
                 logoHeight = logoWidth * logoRatio;
-            context.drawImage(logo, logoWidth/2.2, height/2.3, logoWidth, logoHeight);
+            context.drawImage(logo, logoWidth/2, height/2.3, logoWidth, logoHeight);
         }
         if (logoData == null) {
             logo.src = logoPath;
@@ -38,7 +38,7 @@ function addTextToImage(logoPath, textObjs, width, logoData = null) {
             context.textAlign = 'center';
             if (textObj.sideWays) {
                 context.rotate(Math.PI / 2);
-                context.fillText(textObj.text, (width*imgRatio + 70) / 2 , -((width/textObj.fontSize) + textObj.textHeight));
+                context.fillText(textObj.text, (width*imgRatio) / 1.75 , -((width/textObj.fontSize) + textObj.textHeight));
             } else {
                 context.fillText(textObj.text, width / 2 , height / textObj.textHeight);
             }
