@@ -16,7 +16,7 @@
     <hr>
 </header>
 <div class="content">
-    <div class="left-sidebar">
+    <div class="left-sidebar sidebar">
         <div class="form-item">
             <div class="mdc-touch-target-wrapper">
                 <button id="grape" class="label-selector mdc-fab mdc-fab--touch" value="images/Viinamari.png">
@@ -43,53 +43,66 @@
         <form id="label-form" class="label">
             <div class="form-item">
                 <label class="mdc-text-field mdc-text-field--outlined">
-            <span class="mdc-notched-outline">
-                <span class="mdc-notched-outline__leading"></span>
-                <span class="mdc-notched-outline__notch">
-                  <span class="mdc-floating-label" id="width">Width(mm)</span>
-                </span>
-                <span class="mdc-notched-outline__trailing"></span>
-            </span>
-                    <input type="text" class="mdc-text-field__input" aria-labelledby="width" id="width-field"
-                           value="115">
+                    <span class="mdc-notched-outline">
+                        <span class="mdc-notched-outline__leading"></span>
+                        <span class="mdc-notched-outline__notch">
+                          <span class="mdc-floating-label" id="width">Width(mm)</span>
+                        </span>
+                        <span class="mdc-notched-outline__trailing"></span>
+                    </span>
+                        <input type="number" class="mdc-text-field__input" min="0" aria-labelledby="width" id="width-field"
+                           value="98">
                 </label>
             </div>
             <div class="form-item">
                 <label class="mdc-text-field mdc-text-field--outlined">
-            <span class="mdc-notched-outline">
-                <span class="mdc-notched-outline__leading"></span>
-                <span class="mdc-notched-outline__notch">
-                  <span class="mdc-floating-label" id="label">Label</span>
-                </span>
-                <span class="mdc-notched-outline__trailing"></span>
-            </span>
+                    <span class="mdc-notched-outline">
+                        <span class="mdc-notched-outline__leading"></span>
+                        <span class="mdc-notched-outline__notch">
+                          <span class="mdc-floating-label" id="height">Height(mm)</span>
+                        </span>
+                        <span class="mdc-notched-outline__trailing"></span>
+                    </span>
+                        <input type="number" class="mdc-text-field__input" min="0" aria-labelledby="height"
+                               id="height-field" value="129" disabled>
+                </label>
+            </div>
+            <div class="form-item">
+                <label class="mdc-text-field mdc-text-field--outlined">
+                    <span class="mdc-notched-outline">
+                        <span class="mdc-notched-outline__leading"></span>
+                        <span class="mdc-notched-outline__notch">
+                          <span class="mdc-floating-label" id="label">Label</span>
+                        </span>
+                        <span class="mdc-notched-outline__trailing"></span>
+                    </span>
                     <input type="text" class="mdc-text-field__input" aria-labelledby="label" id="label-field"
-                           value="Viinamarjavein">
+                       value="Viinamarjavein">
                 </label>
             </div>
             <div class="form-item">
                 <label class="mdc-text-field mdc-text-field--outlined">
-            <span class="mdc-notched-outline">
-                <span class="mdc-notched-outline__leading"></span>
-                <span class="mdc-notched-outline__notch">
-                  <span class="mdc-floating-label" id="year">Year</span>
-                </span>
-                <span class="mdc-notched-outline__trailing"></span>
-            </span>
-                    <input type="text" class="mdc-text-field__input" aria-labelledby="year" id="year-field"
-                           value="2022">
+                    <span class="mdc-notched-outline">
+                        <span class="mdc-notched-outline__leading"></span>
+                        <span class="mdc-notched-outline__notch">
+                          <span class="mdc-floating-label" id="year">Year</span>
+                        </span>
+                        <span class="mdc-notched-outline__trailing"></span>
+                    </span>
+                        <input type="text" class="mdc-text-field__input" aria-labelledby="year" id="year-field"
+                               value="2022">
                 </label>
             </div>
             <div class="form-item">
                 <label class="mdc-text-field mdc-text-field--outlined">
-            <span class="mdc-notched-outline">
-                <span class="mdc-notched-outline__leading"></span>
-                <span class="mdc-notched-outline__notch">
-                  <span class="mdc-floating-label" id="volume">Volume</span>
-                </span>
-                <span class="mdc-notched-outline__trailing"></span>
-            </span>
-                    <input type="text" class="mdc-text-field__input" aria-labelledby="volume" id="volume-field"
+                    <span class="mdc-notched-outline">
+                        <span class="mdc-notched-outline__leading"></span>
+                        <span class="mdc-notched-outline__notch">
+                          <span class="mdc-floating-label" id="volume">Volume</span>
+                        </span>
+                        <span class="mdc-notched-outline__trailing"></span>
+                    </span>
+                        <input type="text" class="mdc-text-field__input" aria-labelledby="volume" id="volume-field"
                            value="750ml">
                 </label>
             </div>
@@ -112,10 +125,9 @@
                     </div>
                 </div>
             </div>
-
         </form>
     </div>
-    <div class="right-sidebar">
+    <div class="right-sidebar sidebar">
         <div class="form-item">
             <label for="background-color"></label>
             <input type="color" id="background-color" value="#FFFFF0">
@@ -139,9 +151,22 @@
                     <div class="mdc-fab__touch"></div>
                 </button>
             </div>
+            <div class="mdc-touch-target-wrapper">
+                <button id="print-canvas" class="wine-button mdc-fab mdc-fab--touch">
+                    <div class="mdc-fab__ripple"></div>
+                    <span class="material-icons">print</span>
+                    <div class="mdc-fab__touch"></div>
+                </button>
+            </div>
+        </div>
+        <div class="form-item">
+            <p>
+                Labels per page <span id="per-page">4</span> (max width <span id="per-page-width">98</span>)
+            </p>
         </div>
     </div>
 </div>
+<div id="print" class="hidden"></div>
 <footer>
     <hr>
     <h4>2022</h4>

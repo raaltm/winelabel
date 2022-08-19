@@ -2,6 +2,52 @@
     font-family: 'goodVibrations'; /*a name to be used later*/
     src: url('fonts/GoodVibrationsROB_Script.ttf'); /*URL to font*/
 }
+@media print {
+    @page {
+        margin: 0 !important;
+    }
+
+    body {
+        padding: 15px; /* This will act as your margin. Originally, the margin will hide the header and footer text. */
+    }
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+@media screen and (max-width: 1050px) {
+    .left-sidebar {
+        position: static !important;
+        width: auto !important;
+        justify-content: normal !important;
+    }
+    .middle {
+        margin: auto !important;
+        align-items: normal !important;
+        justify-content: normal !important;
+    }
+    .right-sidebar, footer {
+        display: none !important;
+    }
+    .content {
+        height: auto !important;
+        display: block !important;
+    }
+    .form-item {
+        justify-content: center !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+}
+.form-text {
+    font: 30px 'goodVibrations';
+}
+p {
+    font: 30px 'goodVibrations';
+    margin-top: 5px;
+}
 h1 {
     font:  50px 'goodVibrations';
 }
