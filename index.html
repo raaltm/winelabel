@@ -39,6 +39,15 @@
                     <div class="mdc-fab__touch"></div>
                 </button>
             </div>
+            <div class="mdc-touch-target-wrapper">
+                <button id="custom-label" class="label-selector mdc-fab mdc-fab--touch hidden"
+                        value="images/rhubarb.png">
+                    <div class="mdc-fab__ripple"></div>
+                    <span class="material-icons mdc-fab__icon"><img id="custom-label-img" src="images/rhubarb.png"
+                                                                    width="60"> </span>
+                    <div class="mdc-fab__touch"></div>
+                </button>
+            </div>
         </div>
         <form id="label-form" class="label">
             <div class="form-item">
@@ -92,6 +101,16 @@
                     <input type="text" class="mdc-text-field__input" aria-labelledby="volume" id="volume-field"
                            value="750ml">
                 </label>
+            </div>
+            <div class="form-item center">
+                <label for="file">
+                    <div id="upload-label" class="mdc-fab mdc-fab--touch">
+                        <div class="mdc-fab__ripple"></div>
+                        <span class="material-icons mdc-fab__icon">file_upload</span>
+                        <div class="mdc-fab__touch"></div>
+                    </div>
+                </label>
+                <input class="hidden" type="file" id="file" accept=".png">
             </div>
         </form>
     </div>

@@ -25,7 +25,7 @@ const textObjs = {
     }
 }
 let logoPath = 'images/Viinamari.png';
-function addTextToImage(logoPath, textObjs, width) {
+function addTextToImage(logoPath, textObjs, width, logoData = null) {
     const imageSrc = '/images/label.png';
     const circle_canvas = document.getElementById("canvas");
     const context = circle_canvas.getContext("2d");
@@ -47,7 +47,11 @@ function addTextToImage(logoPath, textObjs, width) {
                 logoHeight = logoWidth * logoRatio;
             context.drawImage(logo, logoWidth/2.2, height/2.3, logoWidth, logoHeight);
         }
-        logo.src = logoPath;
+        if (logoData == null) {
+            logo.src = logoPath;
+        } else {
+            logo.src = logoData;
+        }
         textObjs.forEach(textObj => {
             context.save();
             context.lineWidth = 1;
@@ -72,12 +76,30 @@ $(document).ready(function () {
         mdc.textField.MDCTextField.attachTo(el);
     })
     $('#label-form').on('input', function () {
+        var reader = new FileReader();
+        const form = $(this),
+            customLabel = $('#custom-label');
+        if ($(this)[0][4].files.length !== 0) {
+            reader.readAsDataURL($(this)[0][4].files[0]);
+
+            reader.onload = function (e) {
+                addTextToImage(logoPath,
+                    [
+                        {...textObjs.title, text: form[0][1].value},
+                        {...textObjs.year, text: form[0][2].value},
+                        {...textObjs.volume, text: form[0][3].value}
+                    ], form[0][0].value * 3.779527559, e.target.result);
+                customLabel.removeClass('hidden');
+                customLabel.val(e.target.result);
+                $('#custom-label-img').attr('src', e.target.result);
+            }
+        }
         addTextToImage(logoPath,
             [
-            {...textObjs.title, text: $(this)[0][1].value},
-            {...textObjs.year, text: $(this)[0][2].value},
-            {...textObjs.volume, text: $(this)[0][3].value}
-        ], $(this)[0][0].value * 3.779527559);
+                {...textObjs.title, text: form[0][1].value},
+                {...textObjs.year, text: form[0][2].value},
+                {...textObjs.volume, text: form[0][3].value}
+            ], form[0][0].value * 3.779527559, reader.result);
     });
     $('#download-canvas').click(function () {
         const canvas =  document.getElementById("canvas");
@@ -98,11 +120,13 @@ $(document).ready(function () {
     })
     $('.label-selector').click(function () {
         logoPath = $(this)[0].value;
+        $('#file').val(null);
         $('#label-form').trigger('input');
     })
 
     $('#background-color').on('input', function () {
         $('.right-sidebar').css('background-color', $(this)[0].value);
+        $('.label-selector').css('background-color', $(this)[0].value);
     });
 
     addTextToImage('images/Viinamari.png',[textObjs.title, textObjs.year, textObjs.volume], 440);
