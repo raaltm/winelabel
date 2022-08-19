@@ -39,15 +39,6 @@
                     <div class="mdc-fab__touch"></div>
                 </button>
             </div>
-            <div class="mdc-touch-target-wrapper">
-                <button id="custom-label" class="label-selector mdc-fab mdc-fab--touch hidden"
-                        value="images/rhubarb.png">
-                    <div class="mdc-fab__ripple"></div>
-                    <span class="material-icons mdc-fab__icon"><img id="custom-label-img" src="images/rhubarb.png"
-                                                                    width="60"> </span>
-                    <div class="mdc-fab__touch"></div>
-                </button>
-            </div>
         </div>
         <form id="label-form" class="label">
             <div class="form-item">
@@ -104,14 +95,24 @@
             </div>
             <div class="form-item center">
                 <label for="file">
-                    <div id="upload-label" class="mdc-fab mdc-fab--touch">
+                    <div id="upload-label" class="wine-button mdc-fab mdc-fab--touch">
                         <div class="mdc-fab__ripple"></div>
-                        <span class="material-icons mdc-fab__icon">file_upload</span>
+                        <span class="material-icons">file_upload</span>
                         <div class="mdc-fab__touch"></div>
                     </div>
                 </label>
                 <input class="hidden" type="file" id="file" accept=".png">
+                <div class="mdc-touch-target-wrapper">
+                    <div id="custom-label" class="label-selector mdc-fab mdc-fab--touch hidden"
+                         value="images/rhubarb.png">
+                        <div class="mdc-fab__ripple"></div>
+                        <span class="material-icons mdc-fab__icon"><img id="custom-label-img" src="images/rhubarb.png"
+                                                                        width="60"> </span>
+                        <div class="mdc-fab__touch"></div>
+                    </div>
+                </div>
             </div>
+
         </form>
     </div>
     <div class="right-sidebar">
@@ -125,16 +126,16 @@
         <canvas id="canvas"></canvas>
         <div class="form-item">
             <div class="mdc-touch-target-wrapper">
-                <button id="download-canvas" class="mdc-fab mdc-fab--touch">
+                <button id="download-canvas" class="wine-button mdc-fab mdc-fab--touch">
                     <div class="mdc-fab__ripple"></div>
-                    <span class="material-icons mdc-fab__icon">file_download</span>
+                    <span class="material-icons">file_download</span>
                     <div class="mdc-fab__touch"></div>
                 </button>
             </div>
             <div class="mdc-touch-target-wrapper">
-                <button id="update-canvas" class="mdc-fab mdc-fab--touch">
+                <button id="update-canvas" class="wine-button mdc-fab mdc-fab--touch">
                     <div class="mdc-fab__ripple"></div>
-                    <span class="material-icons mdc-fab__icon">done</span>
+                    <span class="material-icons">done</span>
                     <div class="mdc-fab__touch"></div>
                 </button>
             </div>

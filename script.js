@@ -117,6 +117,7 @@ $(document).ready(function () {
         const demoImg = document.getElementById('demo');
         demoImg.src = img
         demoImg.width = canvas.width;
+        $('#label-form').trigger('input');
     })
     $('.label-selector').click(function () {
         logoPath = $(this)[0].value;
@@ -127,7 +128,8 @@ $(document).ready(function () {
     $('#background-color').on('input', function () {
         $('.right-sidebar').css('background-color', $(this)[0].value);
         $('.label-selector').css('background-color', $(this)[0].value);
+        $('.wine-button').css('background-color', $(this)[0].value);
     });
 
-    addTextToImage('images/Viinamari.png',[textObjs.title, textObjs.year, textObjs.volume], 440);
+    addTextToImage('images/Viinamari.png',[textObjs.title, textObjs.year, textObjs.volume], 115 * 3.779527559);
 })

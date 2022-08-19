@@ -78,15 +78,18 @@ footer {
 }
 .center {
     display: flex;
-    flex-flow: column;
     justify-content: center;
     align-items: center;
 }
-.label-selector {
+.label-selector, .wine-button {
     background-color: #FFFFF0;
     width: 80px;
     height: 80px;
 }
 .hidden {
     display: none;
+}
+.material-icons {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 32px;
 }
